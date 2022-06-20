@@ -1,6 +1,6 @@
 const question = document.getElementById('question')
 const options=document.getElementsByClassName('btn btn-default')
-
+const header = document.getElementById('header')
 
 const questions = [ 
     {
@@ -47,25 +47,33 @@ function setQuestions() {
     }
 }
 
+function outputResult(result) {
+    header.innerHTML += "<div id='outputResult'> </div>"
+    let outputResult = document.getElementById('outputResult')
+    if ('correct' == result){
+        outputResult.innerHTML= '<h2> Correct! </h2>'
+    }
+    else if ('wrong' == result){
+        outputResult.innerHTML= '<h2> Wrong! </h2>'
+    }
+}
+
 function checkAnswer(answer) {
     let currentQuestion = questions[currentIndex]
     if(currentQuestion.correctAnswer == answer) {
         score++
+        header.innerHTML = "<h1> Score:" + score + "</h1>"
+        outputResult('correct')
         currentIndex++
         setQuestions();
-        correctAnswer()
     }
     else {
-        console.log(incorrect)
+        outputResult('wrong')
+        currentIndex++
+        setQuestions()
     }
 
 }
 
-function correctAnswer() {
-    text = "Correct!"
-    options.push(text)
-}
 
-function wrongAnswer() {
 
-}
