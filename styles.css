@@ -1,0 +1,29 @@
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 240px;
+    border: 1px solid blue;
+}
+
+.question-container {
+    margin-top: 50px;
+    max-width: 600px;
+}
+
+.question-container .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+}
+
+.btn {
+    padding: 16px;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
