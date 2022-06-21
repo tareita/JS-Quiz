@@ -12,9 +12,9 @@
 </head>
 
 <body>
-    <div class="content-container">
-        <div id="welcome-page">
-            <div class="header-container" id="header">
+    <div class="content-container" id="view-container">
+        <div id="welcome-view">
+            <div class="header-container">
                 <h3>
                     Welcome to the quiz!
                 </h3>
@@ -29,6 +29,12 @@
                 <div id="question">
                     Question displayed here
                 </div>
+                <div>
+                    Score: <span id="current-score"> 0 </span>
+                </div>
+                <h2 id="outcome">
+
+                </h2>
                 <div class="grid-container">
                     <button class="btn btn-default option" id="A" onclick="checkAnswer('A')">
                         A
@@ -48,8 +54,11 @@
 
         <div id="score-view">
             <h1>
-                Well done for completing the quiz! Your final score is: <span id="score"></span>
+                Well done for completing the quiz! Your final score is: <span id="final-score"></span>
             </h1>
+            <button onclick="setWelcomeView()" class="btn btn-success">
+                Play again?
+            </button>
         </div>
 
     </div>
