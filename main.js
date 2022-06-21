@@ -1,5 +1,5 @@
 const question = document.getElementById('question')
-const options=document.getElementsByClassName('btn btn-default')
+const options=document.getElementsByClassName('option')
 const header = document.getElementById('header')
 
 const questions = [ 
@@ -32,7 +32,7 @@ const questions = [
 ]
 
 let score = 0;
-let currentIndex = 0
+let currentQuestionIndex = 0
 
 
 function startQuiz() {
@@ -40,10 +40,10 @@ function startQuiz() {
 }
 
 function setQuestions() {
-    question.innerHTML = '<h3>' + questions[currentIndex].question + '</h3>'
-    answersList=questions[currentIndex].answers
+    question.innerHTML = '<h3>' + questions[currentQuestionIndex].question + '</h3>'
+    answersList=questions[currentQuestionIndex].answers
     for (i=0;i<answersList.length;i++){
-    options[i].innerHTML = '<div>' + questions[currentIndex].answers[i] + '</div>'
+    options[i].innerHTML = '<div>' + questions[currentQuestionIndex].answers[i] + '</div>'
     }
 }
 
@@ -59,17 +59,17 @@ function outputResult(result) {
 }
 
 function checkAnswer(answer) {
-    let currentQuestion = questions[currentIndex]
+    let currentQuestion = questions[currentQuestionIndex]
     if(currentQuestion.correctAnswer == answer) {
         score++
         header.innerHTML = "<h1> Score:" + score + "</h1>"
         outputResult('correct')
-        currentIndex++
+        currentQuestionIndex++
         setQuestions();
     }
     else {
         outputResult('wrong')
-        currentIndex++
+        currentQuestionIndex++
         setQuestions()
     }
 

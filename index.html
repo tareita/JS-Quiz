@@ -13,34 +13,45 @@
 
 <body>
     <div class="content-container">
-        <div class="header-container" id="header">
-            <h3>
-                Welcome to the quiz!
-            </h3>
-            <button class="btn btn-primary btn-lg active" onclick="startQuiz()">
-                Start
-            </button>
+        <div id="welcome-page">
+            <div class="header-container" id="header">
+                <h3>
+                    Welcome to the quiz!
+                </h3>
+                <button class="btn btn-primary btn-lg active" onclick="startQuiz()">
+                    Start
+                </button>
+            </div>
         </div>
 
-        <div class="question-container">
-            <div id="question">
-                Question displayed here
-            </div>
-            <div class="grid-container">
-                <button class="btn btn-default" id="A" onclick="checkAnswer('A')">
-                    A
-                </button>
-                <button class="btn btn-default" id="B" onclick="checkAnswer('B')">
-                    B
-                </button>
-                <button class=" btn btn-default" id="C" onclick="checkAnswer('C')">
-                    C
-                </button>
-                <button class=" btn btn-default" id="D" onclick="checkAnswer('D')">
-                    D
-                </button>
+        <div id="question-view">
+            <div class="question-container">
+                <div id="question">
+                    Question displayed here
+                </div>
+                <div class="grid-container">
+                    <button class="btn btn-default option" id="A" onclick="checkAnswer('A')">
+                        A
+                    </button>
+                    <button class="btn btn-default option" id="B" onclick="checkAnswer('B')">
+                        B
+                    </button>
+                    <button class=" btn btn-default option" id="C" onclick="checkAnswer('C')">
+                        C
+                    </button>
+                    <button class=" btn btn-default option" id="D" onclick="checkAnswer('D')">
+                        D
+                    </button>
+                </div>
             </div>
         </div>
+
+        <div id="score-view">
+            <h1>
+                Well done for completing the quiz! Your final score is: <span id="score"></span>
+            </h1>
+        </div>
+
     </div>
     <script src=" https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
         integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
